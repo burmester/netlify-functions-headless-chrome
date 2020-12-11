@@ -20,6 +20,7 @@ exports.handler = async (event, context, callback) => {
       const page = await browser.newPage()
       // Goto page and then do stuff
       await page.goto(body.url, {waitUntil: ["domcontentloaded"]})
+      await page.waitFor(1000);
       text = await page.$eval(body.selector, el => el.innerText)
       // var r = /\d+/;
       // number = text.match(r)[0];
