@@ -5,6 +5,7 @@ exports.handler = async (event, context, callback) => {
     console.log('body', body)
     let browser = null
     console.log('spawning chrome headless')
+    var text = "";
     try {
 
       browser = await chromium.puppeteer.launch({
@@ -19,7 +20,7 @@ exports.handler = async (event, context, callback) => {
       const page = await browser.newPage()
       // Goto page and then do stuff
       await page.goto(body.url, {waitUntil: ["domcontentloaded"]})
-      const text = await page.$eval(body.selector, el => el.innerText)
+      text = await page.$eval(body.selector, el => el.innerText)
       // var r = /\d+/;
       // number = text.match(r)[0];
     } catch (err) {
