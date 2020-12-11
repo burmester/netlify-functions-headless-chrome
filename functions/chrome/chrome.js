@@ -21,9 +21,7 @@ exports.handler = async (event, context, callback) => {
       const targetUrl = "https://www.booli.se/orebro+lan/318/?isNewConstruction=0"
 
       // Goto page and then do stuff
-      await page.goto(targetUrl, {
-        waitUntil: ["domcontentloaded", "networkidle0"]
-      })
+      await page.goto(targetUrl)
       await page.waitForSelector('#js__search-summary')
       const text = await page.$eval('#js__search-summary > div > span > h1', el => el.innerText)
       var r = /\d+/;
