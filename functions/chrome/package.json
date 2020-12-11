@@ -11,5 +11,8 @@
   "dependencies": {
     "chrome-aws-lambda": "^1.11.1",
     "puppeteer-core": "^1.11.0"
+  },
+  "devDependencies": {
+    "puppeteer": "^5.5.0"
   }
 }
