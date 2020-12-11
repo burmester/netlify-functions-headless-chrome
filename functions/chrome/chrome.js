@@ -24,16 +24,17 @@ exports.handler = async (event, context, callback) => {
       await page.goto(targetUrl, {
         waitUntil: ["domcontentloaded", "networkidle0"]
       })
+      await page.waitForSelector('#js__search-summary')
       const text = await page.$eval('#js__search-summary > div > span > h1', el => el.innerText)
       var r = /\d+/;
       number = text.match(r)[0];
   
-    } catch (error) {
-      console.log('error', error)
+    } catch (err) {
+      console.log('error', err)
       return callback(null, {
         statusCode: 500,
         body: JSON.stringify({
-          error: error
+          error: err
         })
       })
     } finally {
