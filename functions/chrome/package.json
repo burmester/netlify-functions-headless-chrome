@@ -2,15 +2,15 @@
   "name": "functions",
   "version": "1.0.0",
   "description": "Headless chrome in function",
-  "main": "function-one.js",
+  "main": "chomre.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chrome-aws-lambda": "^1.11.1",
-    "puppeteer-core": "^1.11.0"
+    "chrome-aws-lambda": "^5.5.0",
+    "puppeteer-core": "^5.5.0"
   },
   "devDependencies": {
     "puppeteer": "^5.5.0"
