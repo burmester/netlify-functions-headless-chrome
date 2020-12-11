@@ -18,7 +18,7 @@ const App = () => {
               selector: selector
             })
           });
-          setResult(response.json())
+          setResult(await response.json())
         }
     
     return (
